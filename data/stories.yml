@@ -1,0 +1,47 @@
+version: "3.1"
+
+stories:
+
+
+- story: User asks for products
+  steps:
+      - intent: ask_products
+      - action: action_fetch_products
+
+- story: User removes an item from cart
+  steps:
+    - intent: remove_from_cart
+    - action: action_remove_from_cart
+
+- story: track order
+  steps:
+    - intent: track_order
+    - action: action_track_order
+
+- story: start guest session on greet
+  steps:
+    - intent: greet
+    - action: action_start_guest_session    
+- story: retrieve guest orders
+  steps:
+    - intent: provide_guest_id
+    - action: action_track_order
+- story: start guest session on request
+  steps:
+    - intent: start_guest_session
+    - action: action_start_guest_session    
+- story: User asks for a recommendation
+  steps:
+      - intent: request_recommendation
+      - action: action_get_recommendation
+
+- story: Ask contact FAQ directly
+  steps:
+    - intent: faq
+    - action: action_answer_faq
+
+
+- story: Unknown question
+  steps:
+    - intent: unknown
+    - action: action_default_fallback

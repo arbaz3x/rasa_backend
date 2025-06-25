@@ -1,0 +1,23 @@
+{
+  "0": "add_to_cart",
+  "1": "ask_products",
+  "2": "checkout",
+  "3": "confirm_add_duplicate",
+  "4": "faq_contact",
+  "5": "faq_returns",
+  "6": "faq_shipping",
+  "7": "goodbye",
+  "8": "greet",
+  "9": "handoff_to_human",
+  "10": "provide_guest_id",
+  "11": "purchase_product",
+  "12": "remove_from_cart",
+  "13": "request_recommendation",
+  "14": "search_by_category",
+  "15": "show_all_products",
+  "16": "show_cart",
+  "17": "start_guest_session",
+  "18": "track_order",
+  "19": "unknown",
+  "20": "update_cart_quantity"
+}

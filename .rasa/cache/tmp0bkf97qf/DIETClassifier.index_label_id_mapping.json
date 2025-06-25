@@ -1,0 +1,12 @@
+{
+  "0": "ask_product",
+  "1": "ask_products",
+  "2": "faq_contact",
+  "3": "faq_returns",
+  "4": "faq_shipping",
+  "5": "goodbye",
+  "6": "greet",
+  "7": "handoff_to_human",
+  "8": "request_recommendation",
+  "9": "unknown"
+}

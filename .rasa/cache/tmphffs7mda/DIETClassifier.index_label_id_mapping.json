@@ -1,0 +1,20 @@
+{
+  "0": "add_to_cart",
+  "1": "ask_products",
+  "2": "checkout",
+  "3": "confirm_add_duplicate",
+  "4": "faq_contact",
+  "5": "faq_returns",
+  "6": "faq_shipping",
+  "7": "goodbye",
+  "8": "greet",
+  "9": "handoff_to_human",
+  "10": "purchase_product",
+  "11": "remove_from_cart",
+  "12": "request_recommendation",
+  "13": "search_by_category",
+  "14": "show_all_products",
+  "15": "show_cart",
+  "16": "unknown",
+  "17": "update_cart_quantity"
+}

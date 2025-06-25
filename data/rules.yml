@@ -1,0 +1,100 @@
+version: "3.1"
+
+rules:
+
+
+- rule: Handoff to human
+  steps:
+    - intent: handoff_to_human
+    - action: action_handoff_to_human
+
+- rule: Respond to goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Respond to shipping FAQ
+  steps:
+    - intent: faq_shipping
+    - action: utter_faq_shipping
+
+- rule: Respond to returns FAQ
+  steps:
+    - intent: faq_returns
+    - action: utter_faq_returns
+
+- rule: Respond to contact FAQ
+  steps:
+    - intent: faq_contact
+    - action: utter_faq_contact
+# Product Info & Recommendations (using custom actions)
+- rule: Respond to product info
+  steps:
+    - intent: ask_product
+    - action: action_fetch_product_info
+- rule: Handle purchase request
+  steps:
+      - intent: purchase_product
+      - action: action_offer_to_add_to_cart
+
+- rule: Handle recommendation request
+  steps:
+      - intent: request_recommendation
+      - action: action_get_recommendation
+- rule: Handle purchase request
+  steps:
+      - intent: request_purchase
+      - action: action_offer_to_add_to_cart
+#
+- rule: Search products by category
+  steps:
+  - intent: search_by_category
+  - action: action_fetch_products_by_category
+- rule: Handle add to cart
+  steps:
+      - intent: add_to_cart
+      - action: action_add_to_cart
+
+- rule: Handle show cart
+  steps:
+      - intent: show_cart
+      - action: action_show_cart
+
+- rule: Update cart quantity
+  steps:
+    - intent: update_cart_quantity
+    - action: action_update_cart_quantity
+
+- rule: Show cart contents
+  steps:
+    - intent: show_cart
+    - action: action_show_cart
+
+- rule: Confirm add duplicate
+  steps:
+    - intent: confirm_add_duplicate
+    - action: action_add_to_cart
+
+- rule: Fallback for unrecognized input
+  steps:
+    - intent: nlu_fallback
+    - action: action_default_fallback
+
+- rule: Checkout
+  steps:
+      - intent: checkout
+      - action: action_checkout
+
+- rule: Handle show all products
+  steps:
+      - intent: show_all_products
+      - action: action_show_all_products
+
+- rule: Handle unknown intent
+  steps:
+    - intent: unknown
+    - action: action_default_fallback
+- rule: Fetch products on user request
+  steps:
+      - intent: ask_products
+      - action: action_fetch_products

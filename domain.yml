@@ -1,0 +1,104 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - faq_shipping
+  - faq_returns
+  - faq_contact
+  - ask_products
+  - request_recommendation
+  - purchase_product
+  - add_to_cart
+  - show_cart
+  - checkout
+  - show_all_products
+  - request_purchase
+  - handoff_to_human
+  - search_by_category
+  - remove_from_cart
+  - update_cart_quantity
+  - confirm_add_duplicate
+  - nlu_fallback
+  - track_order
+  - provide_guest_id
+  - start_guest_session
+  # Add these if you use them anywhere:
+  - faq
+  - unknown
+  - deny
+  - out_of_scope
+
+entities:
+  - product
+  - category
+  - add_more
+  - guest_id
+
+synonyms:
+  shoes: Shoes
+  sneakers: Shoes
+  trainers: Shoes
+
+
+slots:
+  guest_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: guest_id
+        intent: provide_guest_id
+
+  product:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: product
+  add_more:
+   type: bool
+   influence_conversation: false
+   mappings:
+    - type: from_entity
+      entity: add_more
+
+responses:
+  utter_goodbye:
+    - text: "Goodbye! Have a great day!"
+  utter_faq_returns:
+    - text: "Our return policy: You can return most items within 30 days of delivery for a full refund. Return shipping is free for damaged or incorrect items. Please visit our Returns page for more details."
+  utter_faq_contact:
+    - text: "You can contact us by phone at 0800-123-456, email support@shop.com, or use our live chat on the website. Our customer service hours are 9am–6pm, Monday to Friday."
+  utter_faq_shipping:
+    - text: "Our shipping policy: Standard shipping takes 3-5 business days. We offer free shipping on orders over $50. You can track your order via the Track Order page or by contacting support."
+  utter_ask_continue:
+    - text: "Would you like to shop more or checkout?"
+      buttons:
+        - title: "Shop more"
+          payload: "/show_all_products"
+        - title: "Checkout"
+          payload: "/checkout"
+  utter_recommendation:
+    - text: "Here is a recommendation for you: {recommendation}"
+
+actions:
+  - action_fetch_product_info
+  - action_get_recommendation
+  - action_default_fallback
+  - action_handoff_to_human
+  - action_fetch_products
+  - action_offer_to_add_to_cart
+  - action_add_to_cart
+  - action_show_cart
+  - action_checkout
+  - action_show_all_products
+  - action_answer_faq
+  - action_list_faqs
+  - action_fetch_products_by_category
+  - action_remove_from_cart
+  - action_update_cart_quantity
+  - action_track_order
+  - action_start_guest_session
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

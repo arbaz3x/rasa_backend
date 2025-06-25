@@ -1,0 +1,254 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - good morning
+
+- intent: handoff_to_human
+  examples: |
+    - I want to talk to a human
+    - connect me to a support agent
+    - can I speak with a real person?
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+
+- intent: faq_shipping
+  examples: |
+    - what is your shipping policy?
+    - how long does shipping take?
+    - do you offer free shipping?
+    - how can I track my order?
+    - where is my order?
+    - how do I track my package?
+    - tell me about your shipping options
+    - is shipping free for orders over $50?
+    - when will my package arrive?
+    - do you ship internationally?
+    - what courier do you use for shipping?
+
+- intent: faq_returns
+  examples: |
+    - what is your return policy?
+    - can I return an item?
+    - how do I return something?
+    - how long do I have to return an item?
+    - is return shipping free?
+    - how do I get a refund?
+    - what items are non-returnable?
+    - how do I exchange a product?
+    - where do I send returns?
+    - do you accept returns on sale items?
+
+- intent: faq_contact
+  examples: |
+    - how can I contact you?
+    - what is your email?
+    - where is your store?
+    - what is your helpline number?
+    - how do I reach customer support?
+    - can I call you?
+    - do you have a contact form?
+    - is there a live chat option?
+    - what are your customer service hours?
+    - how can I get in touch with your team?
+
+
+# Product Information & Recommendations
+#imptove this for every product small letter
+- intent: request_recommendation
+  examples: |
+    - Can you recommend [jeans](product)?
+    - Any suggestions for [socks](product)?
+    - What would you recommend for [running shoes](product)?
+    - Do you have any recommendations for [jackets](product)?
+    - Which [cap](product) would you suggest?
+    - Is there a [wallet](product) you recommend?
+
+
+- intent: ask_products
+  examples: |
+    - show me products
+    - what products do you have
+    - list your products
+    - what can I buy
+    - show all products
+    - What can I buy from you?
+    - Let me see your products.
+    - What items are available?
+    - What do you sell?
+    - List everything you have.
+    - Can I see all your products?
+
+- intent: search_by_category
+  examples: |
+    - show me [jeans](category)
+    - list all [jeans](category)
+    - show me [shoes](category)
+    - list all [shoes](category)
+    - display [jackets](category)
+    - I want to see [accessories](category)
+    - what [shoes](category) do you have?
+    - do you have any [clothing](category)?
+
+- intent: purchase_product
+  examples: |
+    - I want to buy [Jeans](product)
+    - I want to buy [jeans](product)
+    - I want to buy [Sneakers](product)
+    - I want to buy [sneakers](product)
+    - buy [Cap](product)
+    - buy [cap](product)
+    - purchase [Sunglasses](product)
+    - purchase [sunglasses](product)
+    - order [Dress Shirt](product)
+    - order [dress shirt](product)
+    - I want to order [Jacket](product)
+    - I want to order [jacket](product)
+    - buy a [Running Shoes](product)
+    - buy a [running shoes](product)
+    - buy a [Backpack](product)
+    - buy a [backpack](product)
+    - buy a [Watch](product)
+    - buy a [watch](product)
+    - buy a [Sweater](product)
+    - buy a [sweater](product)
+    - buy a [Sandals](product)
+    - buy a [sandals](product)
+    - buy a [Skirt](product)
+    - buy a [skirt](product)
+    - buy a [Wallet](product)
+    - buy a [wallet](product)
+    - buy a [Socks](product)
+    - buy a [socks](product)
+
+
+
+- intent: add_to_cart
+  examples: |
+    - add [Jeans](product) in my cart
+    - add [jeans](product) in my cart
+    - add [Sneakers](product) to my cart
+    - add [sneakers](product) to my cart
+    - add [Cap](product) to my cart
+    - add [cap](product) to my cart
+    - put [Sunglasses](product) in my cart
+    - put [sunglasses](product) in my cart
+    - add [Jacket](product) to my cart
+    - add [jacket](product) to my cart
+    - add [Running Shoes](product) to cart
+    - add [running shoes](product) to cart
+    - add [Backpack](product) to my cart
+    - add [backpack](product) to my cart
+    - add [Watch](product) to my cart
+    - add [watch](product) to my cart
+    - add [Sweater](product) to my cart
+    - add [sweater](product) to my cart
+    - add [Sandals](product) to my cart
+    - add [sandals](product) to my cart
+    - add [Skirt](product) to my cart
+    - add [skirt](product) to my cart
+    - add [Wallet](product) to my cart
+    - add [wallet](product) to my cart
+    - add [Socks](product) to my cart
+    - add [socks](product) to my cart
+
+- intent: remove_from_cart
+  examples: |
+    - remove [jeans](product) from my cart
+    - delete [socks](product) from cart
+    - take [cap](product) out of my cart
+    - can you remove [watch](product) from the cart?
+    - I want to remove [sunglasses](product)
+    - remove [sneakers](product) from my cart
+    - delete [sneakers](product)
+    - take [sneakers](product) out of my cart
+    - can you remove [sneakers](product)?
+    - I want to remove [sneakers]
+    - remove [sneakers]
+    - get rid of [sneakers] in my cart
+    - discard [sneakers]
+    - take [sneakers] off my order
+
+- intent: update_cart_quantity
+  examples: |
+    - change [jeans](product) quantity to 2
+    - set [socks](product) quantity to 3 in my cart
+    - update [cap](product) to 5 in the cart
+    - I want only 1 [watch](product) in my cart
+    - decrease [jeans](product) quantity by 1
+
+- intent: provide_guest_id
+  examples: |
+    - my guest id is 123
+    - here is my guest id: abc-def
+    - guest id: 456
+    - guest id 789
+    - my id is xyz
+    - guest ID: 123-456
+    
+
+- intent: start_guest_session
+  examples: |
+    - start guest session
+    - I want a guest ID
+    - give me a guest ID
+    - new guest session
+- intent: confirm_add_duplicate
+  examples: |
+    - yes, add another
+    - yes, add one more
+    - add one more
+    - sure, add again
+    - no, don’t add
+    - no, just one is fine
+    - no, show me my cart
+
+- intent: show_cart
+  examples: |
+   - show my cart
+   - view cart
+   - view my cart
+   - what is in my cart
+   - can I see my cart
+   - cart
+   - display my cart
+   - see cart
+   - what have I added to my cart
+   - open my cart
+   - display my cart
+
+- intent: checkout
+  examples: |
+    - checkout
+    - place order
+    - buy my cart
+    - complete my purchase
+    - pay now
+    - proceed to checkout
+    - finish my order
+    - I want to checkout
+
+- intent: track_order
+  examples: |
+    - my orders
+    - track my order
+    - show my orders
+    - order status
+    - view orders
+- intent: show_all_products
+  examples: |
+    - show all products
+    - what products do you have
+    - list all products    
+- intent: unknown
+  examples: |
+    - Sorry, no info available for that
+    - i don't know what to say
+    - I cant find that information
