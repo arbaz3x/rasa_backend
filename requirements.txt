@@ -1,4 +1,4 @@
-rasa~=3.6
+rasa==3.6.21
 psycopg2-binary>=2.9.6
 numpy>=1.19.0
 scikit-learn>=0.24.2
@@ -6,4 +6,4 @@ tensorflow~=2.8.0
 transformers>=4.6.0
 spacy>=3.0.0,<4.0.0
 rasa-sdk~=3.6
-python==3.8
+python==3.8.20
