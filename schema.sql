@@ -1,6 +1,11 @@
 -- schema.sql (PostgreSQL)
 
 -- Table for chatbot conversations
+CREATE TABLE users (
+  user_id TEXT PRIMARY KEY,
+  -- other user fields
+);
+
 CREATE TABLE IF NOT EXISTS conversations (
     id SERIAL PRIMARY KEY,
     user_id TEXT,
@@ -9,7 +14,7 @@ CREATE TABLE IF NOT EXISTS conversations (
     user_message TEXT,
     bot_response TEXT,
     intent TEXT,
-    entities JSONB  -- Store as JSON, e.g., {"product": "jeans"}
+    entities JSONB 
 );
 
 -- Table for products
@@ -25,35 +30,6 @@ CREATE TABLE IF NOT EXISTS products (
     image_url TEXT
 );
 
--- Table for FAQs
-CREATE TABLE IF NOT EXISTS faqs (
-    id SERIAL PRIMARY KEY,
-    question TEXT NOT NULL,
-    answer TEXT NOT NULL,
-    category TEXT
-);
--- Users table
-CREATE TABLE users (
-    id SERIAL PRIMARY KEY,
-    username VARCHAR(255) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE
-);
-
--- Carts table
-CREATE TABLE carts (
-    id SERIAL PRIMARY KEY,
-    user_id INTEGER REFERENCES users(id),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
--- Cart items table
-CREATE TABLE cart_items (
-    id SERIAL PRIMARY KEY,
-    cart_id INTEGER REFERENCES carts(id),
-    product_id INTEGER REFERENCES products(id),
-    quantity INTEGER DEFAULT 1
-);
 
 CREATE TABLE orders (
     order_id VARCHAR(255) PRIMARY KEY,
