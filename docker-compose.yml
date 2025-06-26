@@ -1,0 +1,20 @@
+services:
+  rasa:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+
+  action_server:
+    build:
+      context: ./actions
+      dockerfile: Dockerfile
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./actions:/app/actions
+      - ./db:/app/db 
+      - ./shared_data.py:/app/shared_data.py  

@@ -79,6 +79,12 @@ responses:
           payload: "/checkout"
   utter_recommendation:
     - text: "Here is a recommendation for you: {recommendation}"
+  utter_privacy_notice:
+  - text: "To improve your experience, this chatbot may collect and store your conversation data. Your personal information will not be shared without your consent."
+  utter_ask_consent:
+  - text: "May I collect and store your guest ID and order details to help you track your orders?"
+
+
 
 actions:
   - action_fetch_product_info
